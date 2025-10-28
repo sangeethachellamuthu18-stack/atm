@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    {% if messages %}
+        {%  for message in messages %}
+            <p style="color: red;">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>First Name</label>
+        <input type="text" name="firstname" id="firstname"><br><br>
+        <label>Last name</label>
+        <input type="text" name="lastname" id="lname"><br><br>
+        <label>Email</label>
+        <input type="text" name="email" id="email"><br><br>
+        <label>Account number</label>
+        <input type="text" name="account_number"><br><br>
+        <label>Intial amount</label>
+        <input type="text" name="balance" id="balance">
+        <br><br>
+        <label>Password</label>
+        <input type="password" name="password">
+        <br><br>
+        <label>Re-enter password</label>
+        <input type="password" name="re_enter_password">
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+    </form>
+    
+</body>
+</html>
